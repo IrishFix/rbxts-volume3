@@ -1,0 +1,29 @@
+# Dependencies and installs
+node_modules/
+
+# Build output
+out/
+out/tests/
+*.tsbuildinfo
+*.tgz
+
+# Editor/OS noise
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Roblox artifacts
+*.rbxlx.lock
+*.rbxl.lock
+*.rbxlx
+*.rbxl
+
+# Tests (omit from repo)
+src/tests/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Keep docs tracked so they can be published from the repo

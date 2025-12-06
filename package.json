@@ -1,0 +1,52 @@
+{
+  "name": "@rbxts/volume3",
+  "version": "1.0.0",
+  "description": "An RBXTS TypeScript library for defining 3D convex hull volumes in Roblox with efficient collision detection and object tracking. Track Models, BaseParts, and Attachments entering/leaving dynamic volumes using precise spatial queries with customizable query modes and precision levels.",
+  "main": "out/init.luau",
+  "scripts": {
+    "build": "rbxtsc",
+    "build:test": "rbxtsc --rojo test.project.json --type game",
+    "watch": "rbxtsc -w",
+    "prepublishOnly": "npm run build",
+    "rojo:build": "rojo build test.project.json -o testPlace.rbxlx",
+    "rojo:serve": "rojo serve test.project.json"
+  },
+  "keywords": [
+    "roblox-ts",
+    "roblox",
+    "volume",
+    "convex-hull",
+    "collision"
+  ],
+  "author": "irishfix",
+  "license": "MIT",
+  "types": "out/index.d.ts",
+  "files": [
+    "out/index.d.ts",
+    "out/init.luau"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@rbxts/compiler-types": "^3.0.0-types.0",
+    "@rbxts/types": "^1.0.867",
+    "roblox-ts": "^3.0.0",
+    "typedoc": "^0.28.15",
+    "typedoc-github-theme": "^0.3.1",
+    "typedoc-material-theme": "^1.4.1",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@rbxts/beacon": "^2.1.1",
+    "@rbxts/services": "^1.5.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IrishFix/rbxts-volume3"
+  },
+  "bugs": {
+    "url": "https://github.com/IrishFix/rbxts-volume3/issues"
+  },
+  "homepage": "https://github.com/IrishFix/rbxts-volume3#readme"
+}
