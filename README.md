@@ -1,5 +1,7 @@
 # @rbxts/volume3
 
+[![Documentation](https://img.shields.io/badge/docs-online-blue)](https://irishfix.github.io/rbxts-volume3/)
+
 Roblox-ts library for convex-hull volumes with evented enter/leave detection and object tracking. Define arbitrary 3D shapes from vertices or boxes, hook signals for parts/models entering or leaving, and keep volumes up to date with live object trackers.
 
 ## Features
@@ -9,6 +11,9 @@ Roblox-ts library for convex-hull volumes with evented enter/leave detection and
 - Awareness helpers: `TryMakeAware`, `TryForget`, `IsAwareOf`, `AwareInside`, `GetAwareInside`.
 - Configurable query modes: `ModelQueryMode` (Any/All/Primary) and `PartQueryMode` (Point/Box).
 - Optional debug drawing for hull faces/edges (see TSDoc on debug helpers).
+
+## Documentation
+Full API documentation: **[https://irishfix.github.io/rbxts-volume3/](https://irishfix.github.io/rbxts-volume3/)**
 
 ## Installation
 ```sh
