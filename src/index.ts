@@ -149,6 +149,8 @@ export class ObjectTracker {
 			sig.Disconnect();
 		}
 		this._activeSignals.clear();
+		this.LiveUpdate.Destroy();
+		this.Destroyed.Destroy();
 	}
 
 	/**
@@ -817,6 +819,12 @@ export class Volume3 {
 		for (const part of this._debugParts) {
 			part.Destroy();
 		}
+		this.AnyEntered.Destroy();
+		this.AnyLeft.Destroy();
+		this.PartEntered.Destroy();
+		this.PartLeft.Destroy();
+		this.ModelEntered.Destroy();
+		this.ModelLeft.Destroy();
 		this._trackers.clear();
 		this._debugParts.clear();
 		this._visible = false;
@@ -845,6 +853,12 @@ export class Volume3 {
 		for (const part of this._debugParts) {
 			part.Destroy();
 		}
+		this.AnyEntered.Destroy();
+		this.AnyLeft.Destroy();
+		this.PartEntered.Destroy();
+		this.PartLeft.Destroy();
+		this.ModelEntered.Destroy();
+		this.ModelLeft.Destroy();
 		this._trackers.clear();
 		this._debugParts.clear();
 		this._visible = false;
