@@ -1,6 +1,6 @@
 {
   "name": "@rbxts/volume3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An RBXTS TypeScript library for defining 3D convex hull volumes in Roblox with efficient collision detection and object tracking. Track Models, BaseParts, and Attachments entering/leaving dynamic volumes using precise spatial queries with customizable query modes and precision levels.",
   "main": "out/init.luau",
   "scripts": {
