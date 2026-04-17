@@ -1383,7 +1383,7 @@ export class Volume3 {
 				return true;
 			}
 		} else {
-			if (this._intersects(object)) {
+			if (this._partIntersects(object)) {
 				return true;
 			}
 		}
