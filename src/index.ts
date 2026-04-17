@@ -1248,17 +1248,20 @@ export class Volume3 {
 	}
 
 	/**
-	 * Checks if the given `BasePart` intersects with this `Volume3`.
-	 * @private
-	 * @param part The `BasePart` to check.
-	 * @returns Whether the part intersects with the volume.
+	 * Checks if a box defined by a `CFrame` and `Vector3` size intersects with this `Volume3`.
+	 * @public
+	 * @param cframe 
+	 * @param size
+	 * @returns Whether the box intersects with the volume.
 	 */
-	private _partIntersects(part: BasePart): boolean {
-		if (this._partQueryMode === Volume3.PartQueryMode.Point) {
+	public Intersects(cframe: CFrame, size: Vector3, queryMode?: PartQueryMode): boolean {
+		const usingQueryMode = queryMode ?? this._partQueryMode;
+
+		if (usingQueryMode === Volume3.PartQueryMode.Point) {
 			for (let i = 0; i < this._faces.size(); i++) {
 				const normal = this._normals[i];
 				const faceVert = this._vertices[this._faces[i][0]];
-				const toPoint = part.Position.sub(faceVert);
+				const toPoint = cframe.Position.sub(faceVert);
 
 				if (toPoint.Dot(normal) > 0) {
 					return false;
@@ -1266,8 +1269,8 @@ export class Volume3 {
 			}
 			return true;
 		} else {
-			const half = part.Size.mul(0.5);
-			const c = part.CFrame;
+			const half = size.mul(0.5);
+			const c = cframe;
 
 			const signs = [
 				new Vector3(1, 1, 1), new Vector3(-1, 1, 1),
@@ -1319,6 +1322,16 @@ export class Volume3 {
 
 			return true;
 		}
+	}
+
+	/**
+	 * Checks if the given `BasePart` intersects with this `Volume3`.
+	 * @private
+	 * @param part The `BasePart` to check.
+	 * @returns Whether the part intersects with the volume.
+	 */
+	private _partIntersects(part: BasePart): boolean {
+		return this.Intersects(part.CFrame, part.Size);
 	}
 
 	/**
